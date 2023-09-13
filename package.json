@@ -1,0 +1,33 @@
+{
+  "name": "tmp",
+  "version": "1.0.0",
+  "description": "",
+  "publisher": "vscode-samples",
+  "type": "commonjs",
+  "scripts": {
+    "create-cert": "openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes",
+    "start": "npx -y http-server -S",
+    "test1": "node ./src/should_fail.js",
+    "test2": "node ./src/should_succeed.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "@types/vscode": "^1.80.0"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "activationEvents": [],
+  "main": "./src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "xxx.yyy",
+        "title": "Hello World (xxx.yyy)"
+      }
+    ]
+  }
+}
